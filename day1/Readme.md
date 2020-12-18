@@ -143,3 +143,48 @@ Através do console é possível interagir com o estado (state).
 
 Dentro do bloco tem dois meta-argumentos: alias e o version.
 Com o alias é possível trabalhar com multiplos providers.
+
+## 7 - Variables
+
+Variables são criadas para serem usadas em demais arquivos .tf, inclusive podendo executar algumas condições.
+
+Parâmetro sensitive, permite que informações sensíveis não sejam mostradas no terminal
+
+### 7.1 - Formas de utilização da variables
+
+*Direto no terminal*:
+* -var NOME_DA_VARIAVEL="VALOR". Ou seja:
+```bash
+terraform plan -var image_id="ame-12345678" -out plano.plan
+```
+*Em arquivos .tf:*
+Dentro de um arquivo .tf
+```yaml
+var.nome_variavel
+```
+ou seja:
+```yaml
+ami = var.image_id
+```
+O "image_id" é uma variável que foi utilizada na aula, dentro de um arquivo próprio "variables.tf"
+
+Ao passar via terminal um valor para variável incorreto, tendo sido definido um default, o terraform usará esse default.
+
+*Em arquivos de definição de variáveis (.tfvars)*:
+Após criar um arquivo .tfvars contendo a definição de variáveis, basta colocar na linha de execução do terraform, conforme abaixo:
+```bash
+terraform plan -var-file="variables.tfvars" -out plano.plan
+```
+Se for criado um arquivo .auto.tfvars, o terraform usa automaticamente, sem precisar colocar na linha de comando.
+
+*Usando variáveis de ambiente:*
+Basta criar a variável de ambiente, conforme abaixo:
+```bash
+export TF_VAR_image_id=ami-abc123
+```
+Depois, é executar a linha do terraform:
+```bash
+terraform plan -out plano.plan
+```
+### 7.2 - Precedência de variáveis
+Há precedência de variáveis, a -var na linha de comando é a maior e a de menor precedência é a do tipo variável de e ambiente. Mais detalhes na doc oficial.
