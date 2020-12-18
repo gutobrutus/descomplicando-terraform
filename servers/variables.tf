@@ -8,3 +8,9 @@ variable "image_id" {
         error_message = "A imagem_id tem que ser um valor válido de AMI, iniciando com \"ami-\"."
     }
 }
+/*Como não foi usado um default na variável de baixo, será obrigado a informar
+o valor da variável quando for executar o terraform
+*/
+variable "servers" {
+
+}
