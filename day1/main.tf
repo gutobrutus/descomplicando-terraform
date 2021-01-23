@@ -1,5 +1,7 @@
 provider "aws" {
   region = "us-east-1"
+  #abaixo um exemplo de interpolação, definindo regiões diferentes, de acordo com o workspace
+  #region = "${terraform.workspace} == "production" ? "us-east-1" : "us-east-2""
 }
 
 provider "aws" {

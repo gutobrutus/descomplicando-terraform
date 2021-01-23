@@ -67,7 +67,7 @@ O *terraform init* vai inicializar tudo, faz as configurações e cria o arquivo
 Há várias formas de passar a key e a secret para o terraform. Uma opção é através de variáveis de ambiente. No terminal do container, basta executar:
 ```bash
 export AWS_ACCESS_KEY_ID="SEU ACCESS KEY AQUI"
-export AWS_SECRET_ACCESS_KEY"SUA SECRET ACCESS AQUI"
+export AWS_SECRET_ACCESS_KEY="SUA SECRET ACCESS AQUI"
 ```
 Agora ao executar o terraform init, terá sucesso. Após executar o init, será criada a pasta .terraform. Nessa pasta está tudo que o terraform precisa para funcionar.
 
