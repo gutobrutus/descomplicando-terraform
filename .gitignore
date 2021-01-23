@@ -1,4 +1,5 @@
 *.csv
-.terraform/*
 *.plan
+.terraform
+.terraform/*
 .terraform.lock.hcl
