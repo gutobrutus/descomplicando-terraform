@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 provider "aws" {
-  alias = "west"
+  alias  = "west"
   region = "us-west-2"
 }
 
@@ -16,15 +16,15 @@ terraform {
       version = ">= 3.0"
     }
   }
-}  
+}
 
 terraform {
   backend "s3" {
     # Lembre de trocar o bucket para o seu, não pode ser o mesmo nome
     bucket = "bucket-terraform-guto"
     #dynamodb_table = "terraform-state-lock-dynamo" //Especificação da base NoSQL Dynamo para gerenciar lock de state
-    key    = "terraform-guto.tfstate"
-    region = "us-east-1"
+    key     = "terraform-guto.tfstate"
+    region  = "us-east-1"
     encrypt = true
   }
 }
