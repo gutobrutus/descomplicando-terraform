@@ -1,4 +1,4 @@
 *.csv
-day1/.terraform/*
-day1/*.plan
-day1/.terraform.lock.hcl
+.terraform/*
+*.plan
+.terraform.lock.hcl
