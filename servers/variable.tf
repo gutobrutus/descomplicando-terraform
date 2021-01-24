@@ -14,3 +14,21 @@ o valor da variável quando for executar o terraform
 variable "qtde_instances" {
 
 }
+
+/*variable "environment" {
+    default = "production"
+}*/
+#usando types em variables
+variable "environment" {
+  type        = string
+  default     = "production"
+  description = "The enrironent of instance/resource"
+}
+
+variable "plus" {
+    default = 2
+}
+
+variable "production" {
+    default = true
+}

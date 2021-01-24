@@ -155,7 +155,7 @@ Parâmetro sensitive, permite que informações sensíveis não sejam mostradas 
 *Direto no terminal*:
 * -var NOME_DA_VARIAVEL="VALOR". Ou seja:
 ```bash
-terraform plan -var image_id="ame-12345678" -out plano.plan
+terraform plan -var=image_id="ame-12345678" -out plano.plan
 ```
 *Em arquivos .tf:*
 Dentro de um arquivo .tf
